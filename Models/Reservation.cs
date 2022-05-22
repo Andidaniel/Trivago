@@ -16,5 +16,6 @@ namespace Trivago.Models
         public int RoomId { get; set; }
 
         public Room Room { get; set; }
+        public List<ReservationService> ReservationServicesServices { get; set; }
     }
 }

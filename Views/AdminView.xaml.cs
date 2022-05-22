@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Trivago.Data;
 
-namespace Trivago
+namespace Trivago.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdminView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminView : Window
     {
-        private readonly HotelContext _hotelContext = new HotelContext();
-
-        public MainWindow()
+        public AdminView()
         {
             InitializeComponent();
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
     }
 }
