@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trivago.Views"
         mc:Ignorable="d"
-        Title="AdminView" Height="450" Width="800"
+        Title="Hotel? - Trivago"
+        Icon="../Resources/trivago_logo.ico"
+        Height="450" Width="800"
     Background="#222222"
         FontFamily="Arial">
     <Window.Resources>
@@ -13,7 +15,7 @@
         <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
             <Setter Property="Foreground" Value="#6279B8"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -55,6 +57,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -63,9 +66,33 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
+        <Button Content="Manage Room Details"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource DefaultButton}"/>
+        <Button Content="Manage Room Images"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource DefaultButton}"/>
+        <Button Content="Add New Room"
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource DefaultButton}"/>
+        <Button Content="Add Reservation"
+                Grid.Row="7"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource DefaultButton}"/>
+        <Button Content="Manage Extra Services"
+                Grid.Row="9"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource DefaultButton}"/>
     </Grid>
 
 </Window>

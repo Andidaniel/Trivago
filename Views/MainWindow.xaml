@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trivago"
+        xmlns:views="clr-namespace:Trivago.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="Hotel? - Trivago"
+        Icon="../Resources/trivago_logo.ico"
+        Height="450" Width="800"
         Background="#222222"
-        FontFamily="Arial">
+        FontFamily="Arial"
+       >
     <Window.Resources>
         <!--Button Style-->
         <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
@@ -66,6 +70,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+
         <Button Content="Login as admin"
                 Click="AdminLogin" 
                 Grid.Column="3" 

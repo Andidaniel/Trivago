@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Trivago.Data;
+using Trivago.Models;
+using Trivago.Views;
 
 namespace Trivago
 {
@@ -30,12 +32,18 @@ namespace Trivago
 
         private void AdminLogin(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            AdminView adminView = new AdminView(_hotelContext);
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = adminView;
+            App.Current.MainWindow.Show();
         }
 
         private void ViewReservations(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NoAccountView noAccountView = new NoAccountView(_hotelContext);
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = noAccountView;
+            App.Current.MainWindow.Show();
         }
     }
 }

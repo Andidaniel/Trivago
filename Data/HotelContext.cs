@@ -23,6 +23,8 @@ namespace Trivago.Data
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<RoomService> RoomServices { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
+        public DbSet<ExtraService> ExtraServices { get; set; }
+        public DbSet<ReservationService> ReservationServices { get; set; }
 
        
 

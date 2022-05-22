@@ -16,13 +16,14 @@ using Trivago.Data;
 namespace Trivago.Views
 {
     /// <summary>
-    /// Interaction logic for AdminView.xaml
+    /// Interaction logic for NoAccountView.xaml
     /// </summary>
-    public partial class AdminView : Window
+    public partial class NoAccountView : Window
     {
         private readonly HotelContext _hotelContext;
-        public AdminView(HotelContext _hotelContext)
+        public NoAccountView(HotelContext hotelContext)
         {
+            _hotelContext = hotelContext;
             InitializeComponent();
         }
     }

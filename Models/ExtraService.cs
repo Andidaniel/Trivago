@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Trivago.Models
 {
+    /// <summary>
+    /// Extra services that a reservation can have.
+    /// e.g: Transportation, Meals
+    /// </summary>
     public class ExtraService
     {
         public int Id { get; set; }

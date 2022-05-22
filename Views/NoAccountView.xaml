@@ -1,0 +1,107 @@
+﻿<Window x:Class="Trivago.Views.NoAccountView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trivago.Views"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Hotel? - Trivago"
+        Icon="../Resources/trivago_logo.ico"
+        Height="450" Width="800"
+        Background="#222222"
+        FontFamily="Arial">
+  
+        <Window.Resources>
+            <!--Button Style-->
+            <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
+                <Setter Property="Foreground" Value="#6279B8"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="#6279B8" BorderThickness="3" CornerRadius="3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#6279B8"/>
+                        <Setter Property="Foreground" Value="#000000"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" Value="#8EA4D2"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Background" Value="#192238"/>
+                        <Setter Property="Foreground" Value="#999999"/>
+
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+    </Window.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Content="Start date:"
+                Foreground="#6279B8"
+                FontWeight="Bold"
+                FontSize="16"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+            />
+            <DatePicker
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+            />
+
+        <Label
+                Content="End date:"
+                Foreground="#6279B8"
+                FontWeight="Bold"
+                FontSize="16"
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                />
+            <DatePicker
+                Grid.Row="6"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+            />
+
+
+
+        </Grid>
+</Window>

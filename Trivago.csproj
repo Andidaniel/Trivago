@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\NoAccountView.xaml.cs">
+      <DependentUpon>NoAccountView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\AdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,8 +85,14 @@
     <Compile Include="Migrations\202205221534268_UpdatedDB.designer.cs">
       <DependentUpon>202205221534268_UpdatedDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205221640144_HopeFullyFinal.cs" />
+    <Compile Include="Migrations\202205221640144_HopeFullyFinal.designer.cs">
+      <DependentUpon>202205221640144_HopeFullyFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ExtraService.cs" />
     <Compile Include="Models\ReservationService.cs" />
+    <Compile Include="Utils\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
@@ -91,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\NoAccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\202205221231262_init-db.cs" />
@@ -125,6 +138,9 @@
     <EmbeddedResource Include="Migrations\202205221534268_UpdatedDB.resx">
       <DependentUpon>202205221534268_UpdatedDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205221640144_HopeFullyFinal.resx">
+      <DependentUpon>202205221640144_HopeFullyFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -138,8 +154,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Resource Include="Resources\trivago_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
