@@ -11,6 +11,8 @@
         Height="450" Width="800"
         Background="#222222"
         FontFamily="Arial"
+        WindowStartupLocation="CenterScreen"
+
        >
     <Window.Resources>
         <!--Button Style-->

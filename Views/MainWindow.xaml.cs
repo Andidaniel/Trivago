@@ -23,7 +23,6 @@ namespace Trivago
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly HotelContext _hotelContext = new HotelContext();
 
         public MainWindow()
         {
@@ -32,7 +31,7 @@ namespace Trivago
 
         private void AdminLogin(object sender, RoutedEventArgs e)
         {
-            AdminView adminView = new AdminView(_hotelContext);
+            AdminView adminView = new AdminView();
             App.Current.MainWindow.Close();
             App.Current.MainWindow = adminView;
             App.Current.MainWindow.Show();
@@ -40,7 +39,7 @@ namespace Trivago
 
         private void ViewReservations(object sender, RoutedEventArgs e)
         {
-            NoAccountView noAccountView = new NoAccountView(_hotelContext);
+            NoAccountView noAccountView = new NoAccountView();
             App.Current.MainWindow.Close();
             App.Current.MainWindow = noAccountView;
             App.Current.MainWindow.Show();

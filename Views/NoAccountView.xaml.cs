@@ -20,10 +20,10 @@ namespace Trivago.Views
     /// </summary>
     public partial class NoAccountView : Window
     {
-        private readonly HotelContext _hotelContext;
-        public NoAccountView(HotelContext hotelContext)
+      
+        public NoAccountView()
         {
-            _hotelContext = hotelContext;
+          
             InitializeComponent();
         }
     }

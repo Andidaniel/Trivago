@@ -4,12 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trivago.Views"
+        xmlns:viewModels="clr-namespace:Trivago.ViewModels"
         mc:Ignorable="d"
         Title="Hotel? - Trivago"
         Icon="../Resources/trivago_logo.ico"
         Height="450" Width="800"
     Background="#222222"
-        FontFamily="Arial">
+        FontFamily="Arial"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.DataContext>
+        <viewModels:AdminViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <!--Button Style-->
         <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
@@ -66,7 +72,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.4*"/>
         </Grid.ColumnDefinitions>
         <Button Content="Manage Room Details"
                 Grid.Row="1"
@@ -88,11 +94,56 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource DefaultButton}"/>
-        <Button Content="Manage Extra Services"
+        <Button Content="Manage Room Services"
                 Grid.Row="9"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Style="{StaticResource DefaultButton}"/>
+                Style="{StaticResource DefaultButton}"
+                Click="ToManageExtraServices"/>
+        <ListView Grid.Row="1"
+                  Grid.Column="5"
+                  Grid.ColumnSpan="4"
+                  Grid.RowSpan="9"
+                  ItemsSource="{Binding Services}">
+            <!--<ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Service Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Width="100">
+                                    <TextBlock Text="{Binding Name}"
+                                               TextAlignment="Center"
+                                               Background="#222222"
+                                               Foreground="#6279B8"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Description">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Width="230">
+                                <TextBlock Text="{Binding Description}" 
+                                           TextWrapping="WrapWithOverflow"
+                                           TextAlignment="Justify"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>-->
+
+        </ListView>
     </Grid>
 
 </Window>

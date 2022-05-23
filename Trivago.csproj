@@ -65,6 +65,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Business Layer\AdminBLL.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\ChangeRoomServiceViewModel.cs" />
+    <Compile Include="Views\ModifyServicesView.xaml.cs">
+      <DependentUpon>ModifyServicesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NoAccountView.xaml.cs">
       <DependentUpon>NoAccountView.xaml</DependentUpon>
     </Compile>
@@ -100,6 +106,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ModifyServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NoAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

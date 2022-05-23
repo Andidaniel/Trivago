@@ -10,7 +10,9 @@
         Icon="../Resources/trivago_logo.ico"
         Height="450" Width="800"
         Background="#222222"
-        FontFamily="Arial">
+        FontFamily="Arial"
+        WindowStartupLocation="CenterScreen"
+        >
   
         <Window.Resources>
             <!--Button Style-->

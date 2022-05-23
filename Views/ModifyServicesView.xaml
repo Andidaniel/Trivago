@@ -1,0 +1,177 @@
+﻿<Window x:Class="Trivago.Views.ModifyServicesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trivago.Views"
+        xmlns:viewModels="clr-namespace:Trivago.ViewModels"
+        mc:Ignorable="d"
+        Title="Hotel? - Trivago"
+        Icon="../Resources/trivago_logo.ico"
+        Height="450" Width="800"
+        Background="#222222"
+        FontFamily="Arial"
+        WindowStartupLocation="CenterScreen"
+
+        >
+    <Window.DataContext>
+        <viewModels:ChangeRoomServiceViewModel x:Name="ChangeRoomServiceViewModel"/>
+    </Window.DataContext>
+    <Window.Resources>
+        <!--Button Style-->
+        <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="#6279B8"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#6279B8" BorderThickness="3" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#6279B8"/>
+                    <Setter Property="Foreground" Value="#000000"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#8EA4D2"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#192238"/>
+                    <Setter Property="Foreground" Value="#999999"/>
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Room Services"
+               FontSize="30"
+               Grid.Row="1"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="4"
+               Foreground="#6279B8"
+               FontWeight="Bold"/>
+        <ListBox Grid.Row="3"
+                  Grid.Column="1"
+                  Grid.RowSpan="9"
+                  Grid.ColumnSpan="4"
+                  Background="Transparent"
+                  ItemsSource="{Binding Services}"
+                  Margin="0 0 0 10"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 SelectionChanged="ChangedItem"
+                  x:Name="ServiceBox"
+                 
+        >
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel x:Name="ItemDP">
+                        <WrapPanel x:Name="ItemWP" Orientation="Vertical">
+                           <Label Content="{Binding Name}"
+                                  FontSize="15"
+                                  FontWeight="Bold"
+                                  Foreground="#F7F7F7"
+                                  x:Name="Name"
+                                  />
+                           <TextBlock FontSize="12"
+                                    FontWeight="Bold"
+                                    FontFamily="David"
+                                    Margin="10 0 0 0"
+                                    Foreground="#6279B8"
+                                    Background="Transparent"
+                                    TextWrapping="WrapWithOverflow"
+                                    Text="{Binding Description}"
+                                    x:Name="Description"/>
+                        </WrapPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Name: "
+               Grid.Row="3"
+               Grid.Column="7"
+               FontSize="20"
+               Foreground="#6279B8"
+               FontWeight="DemiBold"/>
+        <TextBox Grid.Row="3"
+                 Grid.Column="8"
+                 Grid.ColumnSpan="3"
+                 Margin="0 5"
+                 x:Name="NameTB"
+                 Background="Transparent"
+                 Foreground="#6279B8"
+                 FontSize="18"
+                 BorderBrush="#6279B8"
+                 Text="{Binding NewName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+        />
+        <Label Content="  Description:"
+               Grid.Row="4"
+               Grid.Column="6"
+               Grid.ColumnSpan="2"
+               FontSize="20"
+               Foreground="#6279B8"
+               FontWeight="DemiBold"/>
+        <TextBox Grid.Row="4"
+                   Grid.Column="8"
+                   Grid.ColumnSpan="3"
+                   Grid.RowSpan="4"
+                   Background="Transparent"
+                   BorderBrush="#6279B8"
+                   Foreground="#6279B8"
+                   FontSize="16"
+                   TextWrapping="WrapWithOverflow"
+                   Text="{Binding NewDescription, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                   x:Name="DescriptionTB"
+                   />
+        <Button Grid.Row="10"
+                Grid.Column="6"
+                Content="Save"
+                Style="{StaticResource DefaultButton}"
+                Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=ServiceBox,Path=SelectedItem}"/>       
+        <Button Grid.Row="10"
+                Grid.Column="8"
+                Content="New"
+                Style="{StaticResource DefaultButton}"/>   
+        <Button Grid.Row="10"
+                Grid.Column="10"
+                Content="Back"
+                Style="{StaticResource DefaultButton}"
+                Click="ToSelection"/>
+    </Grid>
+</Window>

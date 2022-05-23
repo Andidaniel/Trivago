@@ -20,10 +20,17 @@ namespace Trivago.Views
     /// </summary>
     public partial class AdminView : Window
     {
-        private readonly HotelContext _hotelContext;
-        public AdminView(HotelContext _hotelContext)
+        public AdminView()
         {
             InitializeComponent();
+        }
+
+        private void ToManageExtraServices(object sender, RoutedEventArgs e)
+        {
+            ModifyServicesView newView = new ModifyServicesView();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = newView;
+            App.Current.MainWindow.Show();
         }
     }
 }
