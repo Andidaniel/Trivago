@@ -32,5 +32,13 @@ namespace Trivago.Views
             App.Current.MainWindow = newView;
             App.Current.MainWindow.Show();
         }
+
+        private void ToManageServices(object sender, RoutedEventArgs e)
+        {
+            ModifyExtraServicesView newView = new ModifyExtraServicesView();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = newView;
+            App.Current.MainWindow.Show();
+        }
     }
 }

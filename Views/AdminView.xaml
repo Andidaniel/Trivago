@@ -79,7 +79,7 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource DefaultButton}"/>
-        <Button Content="Manage Room Images"
+        <Button Content="Add Reservation"
                 Grid.Row="3"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
@@ -89,12 +89,13 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource DefaultButton}"/>
-        <Button Content="Add Reservation"
+        <Button Content="Manage Extra Services"
                 Grid.Row="7"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Style="{StaticResource DefaultButton}"/>
-        <Button Content="Manage Room Services"
+                Style="{StaticResource DefaultButton}"
+                Click="ToManageServices"/>
+        <Button Content="Manage Services"
                 Grid.Row="9"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"

@@ -66,8 +66,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Business Layer\AdminBLL.cs" />
+    <Compile Include="Migrations\202205241722522_LastOne.cs" />
+    <Compile Include="Migrations\202205241722522_LastOne.designer.cs">
+      <DependentUpon>202205241722522_LastOne.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\ChangeRoomExtraServiceViewModel.cs" />
     <Compile Include="ViewModels\ChangeRoomServiceViewModel.cs" />
+    <Compile Include="Views\ModifyExtraServicesView.xaml.cs">
+      <DependentUpon>ModifyExtraServicesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyServicesView.xaml.cs">
       <DependentUpon>ModifyServicesView.xaml</DependentUpon>
     </Compile>
@@ -106,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ModifyExtraServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ModifyServicesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205221640144_HopeFullyFinal.resx">
       <DependentUpon>202205221640144_HopeFullyFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241722522_LastOne.resx">
+      <DependentUpon>202205241722522_LastOne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
