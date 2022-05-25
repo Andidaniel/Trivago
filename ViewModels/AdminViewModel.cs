@@ -11,6 +11,7 @@ namespace Trivago.ViewModels
 {
     public class AdminViewModel:ViewModel
     {
+        
         public AdminViewModel()
         {
         }

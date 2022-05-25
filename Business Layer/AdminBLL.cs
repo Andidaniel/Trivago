@@ -12,6 +12,8 @@ namespace Trivago.Business_Layer
 {
     public static class AdminBLL
     {
+        #region RoomServiceMethods
+
         public static bool AddRoomService(HotelContext dbContext, string newName, string newDescription)
         {
             try
@@ -62,12 +64,15 @@ namespace Trivago.Business_Layer
                 dbContext.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
         }
 
+        #endregion
+
+        #region ExtraServiceMethods
         public static bool AddExtraService(HotelContext dbContext, string newTitle, float newPrice)
         {
             try
@@ -122,5 +127,46 @@ namespace Trivago.Business_Layer
                 return false;
             }
         }
+        #endregion
+
+        #region RoomMethods
+
+  
+        public static bool CreateRoom(HotelContext dbContext, List<Service> services, int floor, int roomNumber,
+            int typeID)
+        {
+            try
+            {
+                dbContext.Rooms.Add(new Room
+                {
+                    Active = true,
+                    Floor = floor,
+                    Number = roomNumber,
+                    RoomTypeId = typeID
+                });
+                dbContext.SaveChanges();
+                Room myRoom = dbContext.Rooms.ToList().ElementAt(dbContext.Rooms.Count() - 1);
+                foreach (Service service in services)
+                {
+                    dbContext.RoomServices.Add(new RoomService
+                    {
+                        RoomId = myRoom.Id,
+                        ServiceId = service.Id
+                    });
+                }
+
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception exception)
+            {
+                return false;
+            }
+         
+
+        }
+
+        #endregion
+
     }
 }

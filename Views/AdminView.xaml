@@ -74,38 +74,36 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.4*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Manage Room Details"
-                Grid.Row="1"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-                Style="{StaticResource DefaultButton}"/>
-        <Button Content="Add Reservation"
-                Grid.Row="3"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-                Style="{StaticResource DefaultButton}"/>
         <Button Content="Add New Room"
-                Grid.Row="5"
+                Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Style="{StaticResource DefaultButton}"/>
+                Style="{StaticResource DefaultButton}"
+                Click="ToAddRoom"/>
         <Button Content="Manage Extra Services"
-                Grid.Row="7"
+                Grid.Row="5"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource DefaultButton}"
                 Click="ToManageServices"/>
         <Button Content="Manage Services"
-                Grid.Row="9"
+                Grid.Row="8"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource DefaultButton}"
                 Click="ToManageExtraServices"/>
-        <ListView Grid.Row="1"
+        <Button Content="Back"
+                Grid.Row="5"
+                Grid.Column="8"
+                Style="{StaticResource DefaultButton}"
+                Click="BackToMainMenu"
+        />
+        <!--<ListView Grid.Row="1"
                   Grid.Column="5"
                   Grid.ColumnSpan="4"
                   Grid.RowSpan="9"
-                  ItemsSource="{Binding Services}">
+                  ItemsSource="{Binding Services}"
+         </ListView>>-->
             <!--<ListView.View>
                 <GridView>
                     <GridView.ColumnHeaderContainerStyle>
@@ -144,7 +142,7 @@
                 </GridView>
             </ListView.View>-->
 
-        </ListView>
+       
     </Grid>
 
 </Window>

@@ -91,7 +91,6 @@ namespace Trivago.ViewModels
                 }
             }
         }
-
         private void UpdateExtraService(object param)
         {
             float fPrice;

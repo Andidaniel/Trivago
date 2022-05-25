@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trivago.Views"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:viewModels="clr-namespace:Trivago.ViewModels"
         mc:Ignorable="d"
         Title="Hotel? - Trivago"
         Icon="../Resources/trivago_logo.ico"
@@ -47,6 +48,9 @@
             </Style>
 
     </Window.Resources>
+    <Window.DataContext>
+        <viewModels:NoAccountViewModel x:Name="NoAccountViewModel"/>
+    </Window.DataContext>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
@@ -73,37 +77,25 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="0.1*"/>
             </Grid.ColumnDefinitions>
-            <Label
-                Content="Start date:"
-                Foreground="#6279B8"
-                FontWeight="Bold"
-                FontSize="16"
-                Grid.Row="1"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-            />
-            <DatePicker
-                Grid.Row="2"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-            />
-
-        <Label
-                Content="End date:"
-                Foreground="#6279B8"
-                FontWeight="Bold"
-                FontSize="16"
-                Grid.Row="5"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
+            <Button Content="Back"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Style="{StaticResource DefaultButton}"
+                    Click="BackToMainMenu"
                 />
-            <DatePicker
-                Grid.Row="6"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-            />
 
-
-
-        </Grid>
+            <ListBox Grid.Row="2"
+                     Grid.Column="3"
+                     Grid.RowSpan="8"
+                     Grid.ColumnSpan="4"
+                     Background="Transparent"
+                     ItemsSource="{Binding UIRooms}"
+                     Margin="0 0 0 10"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     Foreground="#F7F7F7"
+                     FontWeight="DemiBold"
+                     
+            >
+            </ListBox>
+    </Grid>
 </Window>

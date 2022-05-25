@@ -70,9 +70,14 @@
     <Compile Include="Migrations\202205241722522_LastOne.designer.cs">
       <DependentUpon>202205241722522_LastOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddRoomViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\ChangeRoomExtraServiceViewModel.cs" />
     <Compile Include="ViewModels\ChangeRoomServiceViewModel.cs" />
+    <Compile Include="ViewModels\NoAccountViewModel.cs" />
+    <Compile Include="Views\AddRoomView.xaml.cs">
+      <DependentUpon>AddRoomView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyExtraServicesView.xaml.cs">
       <DependentUpon>ModifyExtraServicesView.xaml</DependentUpon>
     </Compile>
@@ -82,6 +87,10 @@
     <Compile Include="Views\NoAccountView.xaml.cs">
       <DependentUpon>NoAccountView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\AddRoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

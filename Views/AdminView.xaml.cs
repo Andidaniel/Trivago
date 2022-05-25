@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using Trivago.Data;
 
 namespace Trivago.Views
@@ -39,6 +41,24 @@ namespace Trivago.Views
             App.Current.MainWindow.Close();
             App.Current.MainWindow = newView;
             App.Current.MainWindow.Show();
+        }
+
+        private void ToAddRoom(object sender, RoutedEventArgs e)
+        {
+            AddRoomView newView = new AddRoomView();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = newView;
+            App.Current.MainWindow.Show();
+            
+        }
+
+        private void BackToMainMenu(object sender, RoutedEventArgs e)
+        {
+            MainWindow newView = new MainWindow();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = newView;
+            App.Current.MainWindow.Show();
+
         }
     }
 }

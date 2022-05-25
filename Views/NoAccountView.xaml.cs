@@ -26,5 +26,16 @@ namespace Trivago.Views
           
             InitializeComponent();
         }
+
+        private void BackToMainMenu(object sender, RoutedEventArgs e)
+        {
+
+                MainWindow newView = new MainWindow();
+                App.Current.MainWindow.Close();
+                App.Current.MainWindow = newView;
+                App.Current.MainWindow.Show();
+
+            
+        }
     }
 }
